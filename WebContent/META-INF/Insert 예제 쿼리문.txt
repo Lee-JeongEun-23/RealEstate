@@ -1,0 +1,178 @@
+--------------------------------------------------------------------------------
+
+-- USERCODE 생성
+INSERT INTO USERCODE VALUES (
+  'A00', '관리자'
+);
+INSERT INTO USERCODE VALUES (
+  'U01', '개인회원'
+);
+INSERT INTO USERCODE VALUES (
+  'U02', '공인중개사회원'
+);
+INSERT INTO USERCODE VALUES (
+  'B01', '개인블랙회원'
+);
+INSERT INTO USERCODE VALUES (
+  'B02', '공인중개사블랙회원'
+);
+
+-- 관리자 계정 생성   'A00', '관리자'
+INSERT INTO ADMIN VALUES (
+  'ododo', '1004', 'A00'
+);
+INSERT INTO ADMIN VALUES (
+  'hgoguma', '1004', 'A00'
+);
+INSERT INTO ADMIN VALUES (
+  'jeje', '1004', 'A00'
+);
+INSERT INTO ADMIN VALUES (
+  'keem', '1004', 'A00'
+);
+
+COMMIT;
+-- 관리자 계정 생성까지 COMMIT
+
+-- 거래유형 생성 '매매', '전세'
+INSERT INTO TYPE VALUES (
+  '매매'
+);
+INSERT INTO TYPE VALUES (
+  '전세'
+);
+
+COMMIT;
+-- 거래유형 입력까지 COMMIT
+
+-- 시퀀스 번호 생성
+CREATE SEQUENCE SEQ_APTNUM -- 매물번호 시퀀스 생성
+  START WITH 1
+  INCREMENT BY 1;
+CREATE SEQUENCE SEQ_REVIEW -- 후기글 시퀀스 생성
+  START WITH 1
+  INCREMENT BY 1;
+CREATE SEQUENCE SEQ_SCHEDULE -- 일정관리 시퀀스 생성
+  START WITH 1
+  INCREMENT BY 1;
+  
+COMMIT;
+-- 시퀀스 번호 생성까지 COMMIT
+
+-- 개인회원 계정 생성  'U01', '개인회원'
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser001','1004','홍수아','961220','2222222','010-3333-3333','서울시 관악구 국회단지길 52','301호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser002','1004','류현진','870325','1234567','010-3181-1611','서울시 강남구 봉은사로63길 47','602호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser003','1004','박지성','810225','1036624','010-6353-6662','서울시 강남구 언주로30길 26','1111호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser004','1004','김영권','900227','1963336','010-3303-9964','서울시 송파구 가락로 187','909호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser005','1004','이지은','930516','2003692','010-1004-3265','서울시 서초구 반포대로 275','1004호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser006','1004','여진구','970813','1078771','010-1996-1175','서울시 강동구 성안로25길 55','301호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser007','1004','한혜진','830323','2963365','010-6355-8558','서울시 서초구 강남대로6길 148','1006호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser008','1004','이수현','990504','2033623','010-4525-8877','서울시 성동구 둘레11길 1','1101호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser009','1004','이찬혁','960912','1058585','010-9969-3361','서울시 성동구 둘레11길 1','1101호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser010','1004','이영애','710131','2096336','010-1312-9896','서울시 종로구 평창길 3','1층',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser011','1004','현빈','820925','1063989','010-8558-1234','서울시 서초구 강남대로2길 24','702호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser012','1004','손예진','820111','2102003','010-9663-1223','서울시 서초구 신반포로 270','1301호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser013','1004','김태리','900424','2102236','010-9974-3660','서울시 성북구 성북로6가길 23','304호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser014','1004','류준열','860925','1015584','010-7220-2124','서울 강남구 도곡로 404','2009호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser015','1004','이동휘','850722','1033269','010-6636-4422','서울 강동구 천호대로 1077','2104호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser016','1004','강동원','810118','1022552','010-6633-1119','서울시 강남구 영동대로 319','705호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser017','1004','이혜리','940609','2111536','010-9966-3337','서울시 성동구 난계로 100','1010호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser018','1004','서지혜','840824','2113365','010-9669-7774','서울시 강동구 구천면로 192','701호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser019','1004','박보영','900212','2236961','010-1336-9998','서울시 강남구 강남대로 272','804호',(select usercode from usercode where usercode='U01'));
+insert into genericuser(userid,userpwd,username,frontResNum,backResNum,userPhoneNum,useraddr,userDetailAddr,userCode) 
+  values('guser020','1004','조정석','801226','1115887','010-8859-0258','서울시 강남구 언주로 420','306호',(select usercode from usercode where usercode='U01'));
+
+COMMIT;
+-- 개인회원 계정 생성까지 COMMIT
+
+-- 공인중개사회원 계정 생성  'U02', '공인중개사회원'
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser001','1004', '구광모','010-1544-7777','LG부동산','서울시 강서구 마곡중앙10로 30','LG사이언스파크','02-1544-7777','502-11-01931',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser002','1004', '이재용','010-1588-3366','삼성부동산','서울시 강남구 테헤란로77길 11-9','삼성타워','02-1588-3366','124-81-00998',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser003','1004', '정의선','010-6000-6000','현대부동산','서울시 서초구 헌릉로 12','1층','080-600-6000','101-81-09147',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser004','1004', '최준영','010-2000-2000','기아부동산','서울시 서초구 헌릉로 12','2층','080-200-2000','119-81-02316',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser005','1004', '최태원','010-6400-0114','SK부동산','서울시 종로구 종로 26','SK빌딩','02-6400-0114','502-11-01931',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser006','1004', '최정우','010-4220-0114','포스코부동산','경상북도 포항시 남구 동해안로 6261','포스코','054-220-0114','540-20-21214',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser007','1004', '김승연','010-2729-1114','한화부동산','서울시 중구 청계천로 86','한화빌딩','02-729-1114','729-11-91114',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser008','1004', '허창수','010-2005-8125','GS부동산','서울시 강남구 논현로 508','GS타워','02-2005-8125','205-20-58125',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser009','1004', '김병원','010-2080-5114','농협부동산','서울시 중구 새문안로 16','농협타워','02-2080-5114','502-11-01931',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser010','1004', '장재영','010-1588-1234','신세계부동산','서울시 중구 소공로 63','LG사이언스파크','02-1588-1234','158-81-81234',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser011','1004', '손경식','010-7268-8114','CJ부동산','서울시 중구 소월로2길 12','CJ그룹','02-726-8114','104-81-26714',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser012','1004', '박정원','010-3398-0114','두산부동산','서울시 중구 장충단로 275','두산타워','02-3398-0114','339-81-80011',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser013','1004', '박현주','010-1588-0220','미래에셋부동산','서울시 영등포구 국제금융로 56','1층','02-1588-0220','305-81-08605',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser014','1004', '후세인','010-3772-5151','에쓰오일부동산','서울시 마포구 백범로 192','2층','02-3772-5151','236-81-04169',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser015','1004', '김남구','010-3276-6400','SK부동산','서울시 영등포구 의사당대로 88','한국투자증권빌딩','02-3276-6400','123-11-20031',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser016','1004', '이강인','010-2519-3314','영풍부동산','서울시 강남구 강남대로 542','영풍빌딩','02-519-3314','791-20-63100',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser017','1004', '박영규','010-1544-1900','교보부동산','서울시 종로구 종로 1','교보빌딩','02-1544-1900','102-81-11670',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser018','1004', '김범수','010-1899-1326','카카오부동산','제주특별자치도 제주시 첨단로 242','10층','02-1899-1326','123-45-12345',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser019','1004', '유석진','010-3677-3114','코오롱부동산','경기도 과천시 코오롱로 11','코오롱','02-3677-3114','367-73-73114',(select usercode from usercode where usercode='U02'));
+insert into REAUSER(reaId,reaPwd,reaName,reaPhoneNum,officeName,officeAddr,officeDetailAddr,officeHp,regNum,userCode) 
+  values('reauser020','1004', '한성숙','010-1588-3830','네이버부동산','경기도 성남시 분당구 불정로 6','네이버','02-1588-3830','712-81-71562',(select usercode from usercode where usercode='U02'));
+
+COMMIT;
+-- 공인중개사회원 계정 생성까지 COMMIT
+
+insert into sale(aptNum, aptSize, type, addr, roadAddr, aptName, aptDong, aptHo, price, direction, etc, isContract,reaId) 
+  values(seq_aptNum.nextval, '24',(select type from type where type='매매'), '서울 강남구 역삼동 794-19', '서울 강남구 도곡로19길 17','역삼동, 강남 한솔아파트','105동','102호','140000','남동향','학군좋음,역삼역 10분,갭투자','무',(select reaid from reauser where reaid='drop4bit')); 
+insert into sale(aptNum, aptSize, type, addr, roadAddr, aptName, aptDong, aptHo, price, direction, etc, isContract,reaId) 
+  values(seq_aptNum.nextval, '24',(select type from type where type='매매'), '서울 강남구 역삼동 794-24', '서울 강남구 도곡로19길 13','역삼동, 역삼노블카운티아파트','103동','102호','140000','남동향','포베이구조,강남역 5분거리,수리완료','무',(select reaid from reauser where reaid='drop4bit')); 
+insert into sale(aptNum, aptSize, type, addr, roadAddr, aptName, aptDong, aptHo, price, direction, etc, isContract,reaId) 
+  values(seq_aptNum.nextval, '24',(select type from type where type='매매'), '서울 강남구 역삼동 681-46', '서울 강남구 선릉로107길 24','역삼동, 성영아파트 for U','105동','302호','160000','남향','로얄층 전망좋고 학군배정우수 삼성역세권 수혜아파트','무',(select reaid from reauser where reaid='drop4bit')); 
+insert into sale(aptNum, aptSize, type, addr, roadAddr, aptName, aptDong, aptHo, price, direction, etc, isContract,reaId) 
+  values(seq_aptNum.nextval, '24',(select type from type where type='매매'), '서울 강남구 역삼동 636-33', '서울 강남구 논현로101길 6','역삼동, 프리우스역삼아파트','103동','102호','140000','남동향','주인거주, 6개월 전 특 올수리,남향,로얄층,전망 좋은 집','무',(select reaid from reauser where reaid='drop4bit')); 
+insert into sale(aptNum, aptSize, type, addr, roadAddr, aptName, aptDong, aptHo, price, direction, etc, isContract,reaId) 
+  values(seq_aptNum.nextval, '24',(select type from type where type='매매'), '서울 강남구 역삼동 789-29', '서울 강남구 논현로71길 48','역삼동, 지석 천평대 아파트','103동','102호','140000','남동향','내부 깨끗하고 저렴한 급매매, 남서향','무',(select reaid from reauser where reaid='drop4bit'));
+  
+--------------------------------------------------------------------------------
+
+-- 생성된 테이블 확인
+SELECT * FROM ADMIN;
+SELECT * FROM BOOKMARK;
+SELECT * FROM GENERICUSER;
+SELECT * FROM OFFICEIMAGE;
+SELECT * FROM REAIMAGE;
+SELECT * FROM REAINTROBOARD;
+SELECT * FROM REASCHEDULE;
+SELECT * FROM REAUSER;
+SELECT * FROM REVIEW;
+SELECT * FROM SALE;
+SELECT * FROM SALEIMAGE;
+SELECT * FROM TYPE;
+SELECT * FROM USERCODE;
